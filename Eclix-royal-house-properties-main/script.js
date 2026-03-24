@@ -42,7 +42,10 @@ const mongoose=require("mongoose");
 const propertySchema=new mongoose.schema
 ({
     tittle:
-    loact
+    location
+    Type:
+    Price:
+    Image:
+module.exports=mongoose.model("property",propertySchema);
 }
-
 )
