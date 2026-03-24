@@ -49,3 +49,19 @@ const propertySchema=new mongoose.schema
 module.exports=mongoose.model("property",propertySchema);
 }
 )
+//Routes(The auth system)
+const express=require("express");
+const router=express.Router();
+const user=require.("../models/user");
+const bcrypt=require("bcryptjs");
+const jwt=require("jsonwebtoken");
+//Registering
+router.post("/register",async(req,res)=>{
+    const hashed=await
+        bcrypt.hash(req.body.password, 10)
+    const user=new user({email:req.body.email
+        password:hashed})
+//log in
+router.post("/login/",async(req,res)=>{
+
+    
